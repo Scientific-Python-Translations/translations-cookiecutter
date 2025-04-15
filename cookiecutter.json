@@ -1,0 +1,13 @@
+{
+    "project_name": "",
+    "repo_name": "{{ cookiecutter.project_name|lower|replace(' ','-') }}-translations",
+    "source_repo": "",
+    "source_folder": "",
+    "source_ref": "main",
+    "translations_repo": "Scientific-Python-Translations/{{ cookiecutter.project_name|lower|replace(' ','-') }}-translations",
+    "translations_folder": "{{ cookiecutter.project_name|lower|replace(' ','-') }}-translations/content/en/",
+    "translations_ref": "main",
+    "translation_percentage": "90",
+    "approval_percentage": "0",
+    "use_precommit": ["true", "false"]
+}

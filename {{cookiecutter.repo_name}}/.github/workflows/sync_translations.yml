@@ -1,0 +1,28 @@
+name: Sync Translations
+on:
+  schedule:
+    - cron: '0 12 * * MON'  # Every Monday at noon
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync {{ cookiecutter.project_name }} translations
+        uses: Scientific-Python-Translations/translations-sync@main
+        with:
+          # Provided by user
+          crowdin-project: "{{ cookiecutter.project_name }}"
+          source-repo: "{{ cookiecutter.source_repo }}"
+          source-folder: "{{ cookiecutter.source_folder }}"
+          source-ref: "{{ cookiecutter.source_ref }}"
+          translations-repo: "{{ cookiecutter.repo_name }}"
+          translations-folder: "{{ cookiecutter.translations_folder }}"
+          translations-ref: "{{ cookiecutter.translations_ref }}"
+          translation-percentage: "{{ cookiecutter.translation_percentage }}"
+          approval-percentage: "{{ cookiecutter.apporval_percentage }}"
+          use-precommit: "{{ cookiecutter.use_precommit }}"
+          # Provided by organization secrets
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          token: ${{ secrets.TOKEN }}
+          crowdin-token: ${{ secrets.CROWDIN_TOKEN }}

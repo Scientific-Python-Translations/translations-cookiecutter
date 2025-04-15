@@ -1,0 +1,23 @@
+name: Sync Content
+on:
+  schedule:
+    - cron: '0 5 * * *'  # Daily at 5 am
+  workflow_dispatch:
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync {{ cookiecutter.project_name }} Content
+        uses: Scientific-Python-Translations/content-sync@main
+        with:
+          source-repo: "{{ cookiecutter.source_repo }}"
+          source-folder: "{{ cookiecutter.source_folder }}"
+          source-ref: "{{ cookiecutter.source_ref }}"
+          translations-repo: "{{ cookiecutter.repo_name }}"
+          translations-folder: "{{ cookiecutter.translations_folder }}"
+          translations-ref: "{{ cookiecutter.translations_ref }}"
+          # These are provided by the Scientific Python Project and allow
+          # automation with bots
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          token: ${{ secrets.TOKEN }}
