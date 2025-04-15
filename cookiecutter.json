@@ -1,13 +1,16 @@
 {
     "project_name": "",
-    "repo_name": "{{ cookiecutter.project_name|lower|replace(' ','-') }}-translations",
-    "source_repo": "",
-    "source_folder": "",
+    "source_org": "",
+    "source_repo_name": "",
+    "base_source_folder": "content",
     "source_ref": "main",
     "translations_repo": "Scientific-Python-Translations/{{ cookiecutter.project_name|lower|replace(' ','-') }}-translations",
     "translations_folder": "{{ cookiecutter.project_name|lower|replace(' ','-') }}-translations/content/en/",
     "translations_ref": "main",
     "translation_percentage": "90",
     "approval_percentage": "0",
-    "use_precommit": ["true", "false"]
+    "use_precommit": ["false", "true"],
+    "__translations_repo_name": "{{ cookiecutter.source_repo_name }}-translations",
+    "__source_folder": "{{ cookiecutter.source_repo_name }}/{{ cookiecutter.base_source_folder }}/en/",
+    "__source_repo": "{{ cookiecutter.source_org }}/{{ cookiecutter.source_repo_name }}"
 }

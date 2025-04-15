@@ -10,14 +10,14 @@ jobs:
       - name: Sync {{ cookiecutter.project_name }} Content
         uses: Scientific-Python-Translations/content-sync@main
         with:
-          source-repo: "{{ cookiecutter.source_repo }}"
-          source-folder: "{{ cookiecutter.source_folder }}"
+          source-repo: "{{ cookiecutter.__source_repo }}"
+          source-folder: "{{ cookiecutter.__source_folder }}"
           source-ref: "{{ cookiecutter.source_ref }}"
-          translations-repo: "{{ cookiecutter.repo_name }}"
+          translations-repo: "{{ cookiecutter.translations_repo }}"
           translations-folder: "{{ cookiecutter.translations_folder }}"
           translations-ref: "{{ cookiecutter.translations_ref }}"
           # These are provided by the Scientific Python Project and allow
           # automation with bots
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          token: ${{ secrets.TOKEN }}
+          gpg-private-key: {% raw %}${{ secrets.GPG_PRIVATE_KEY }}{% endraw %}
+          passphrase: {% raw %}${{ secrets.PASSPHRASE }}{% endraw %}
+          token: {% raw %}${{ secrets.TOKEN }}{% endraw %}

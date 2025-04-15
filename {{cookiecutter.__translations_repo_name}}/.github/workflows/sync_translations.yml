@@ -12,17 +12,17 @@ jobs:
         with:
           # Provided by user
           crowdin-project: "{{ cookiecutter.project_name }}"
-          source-repo: "{{ cookiecutter.source_repo }}"
-          source-folder: "{{ cookiecutter.source_folder }}"
+          source-repo: "{{ cookiecutter.__source_repo }}"
+          source-folder: "{{ cookiecutter.__source_folder }}"
           source-ref: "{{ cookiecutter.source_ref }}"
-          translations-repo: "{{ cookiecutter.repo_name }}"
+          translations-repo: "{{ cookiecutter.translations_repo }}"
           translations-folder: "{{ cookiecutter.translations_folder }}"
           translations-ref: "{{ cookiecutter.translations_ref }}"
           translation-percentage: "{{ cookiecutter.translation_percentage }}"
-          approval-percentage: "{{ cookiecutter.apporval_percentage }}"
+          approval-percentage: "{{ cookiecutter.approval_percentage }}"
           use-precommit: "{{ cookiecutter.use_precommit }}"
           # Provided by organization secrets
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          token: ${{ secrets.TOKEN }}
-          crowdin-token: ${{ secrets.CROWDIN_TOKEN }}
+          gpg-private-key: {% raw %}${{ secrets.GPG_PRIVATE_KEY }}{% endraw %}
+          passphrase: {% raw %}${{ secrets.PASSPHRASE }}{% endraw %}
+          token: {% raw %}${{ secrets.TOKEN }}{% endraw %}
+          crowdin-token: {% raw %}${{ secrets.CROWDIN_TOKEN }}{% endraw %}
