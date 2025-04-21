@@ -10,8 +10,6 @@ This template helps maintainers set up dedicated translation repositories that a
 
 The `translations-cookiecutter` provides a standardized structure for Scientific Python project translation repositories. It includes boilerplate files, GitHub Actions workflows, and configuration that allow projects to integrate multilingual content into their websites efficiently.
 
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -25,13 +23,11 @@ Install Cookiecutter:
 pip install cookiecutter
 ```
 
----
-
 ### Example: Creating a Translation Repo for NumPy
 
 Let’s say you're setting up translations for the [NumPy website](https://numpy.org/).
 
-You should first ask the team to create a new project on the [Scientific Python Crowdin](https://scientific-python.crowdin.com/u). For this example the project name is `NumPy.Org`. Letter case is important!
+You should first ask the Scientific Python Translations Team to create a new project on the [Scientific Python Crowdin](https://scientific-python.crowdin.com/u). For this example the project name is `NumPy.Org`. Letter casing must match exactly.
 
 Run the following command:
 
@@ -85,7 +81,24 @@ Next steps:
 
 3. Update the language switcher and localization configuration on [`numpy.org`](https://github.com/numpy/numpy.org) to begin serving translated content.
 
----
+4. Update the [crowdin.yml] file contents. The template will create a default Crowind configuration file
+   but the contents for the `files` setion will change from project to project so this needs to be updated
+   in order to have the correct integratuon. You can read more about the configuration file on the [Crowdin support docs](https://support.crowdin.com/developer/configuration-file/).
+
+```yaml
+# https://support.crowdin.com/developer/configuration-file/
+project_identifier: PROJECT_IDENTIFIER_CROWDIN
+api_key: API_KEY_CROWDIN
+base_path: ./
+preserve_hierarchy: true
+files:
+  # Update this to the correct extensions of your project
+  - source: /content/en/*.md
+    translation: /content/%two_letters_code%/%original_file_name%
+    update_option: update_as_unapproved
+    # ignore:
+    #  - /content/en/*.mdx
+```
 
 ## 🙌 Community & Support
 
@@ -93,13 +106,9 @@ Next steps:
 - Browse the [Scientific Python Translations documentation](https://scientific-python-translations.github.io/docs/)
 - Visit the [content-sync](https://github.com/Scientific-Python-Translations/content-sync) and [translations-sync](https://github.com/Scientific-Python-Translations/translations-sync) Github actions.
 
----
-
 ## 🤝 Contributing
 
-Want to improve this template? Found a bug? Open an issue or pull request!
-
----
+Want to improve this template? Found a bug? [Open an issue](https://github.com/Scientific-Python-Translations/translations-cookiecutter/issues) or pull request!
 
 ## 📄 License
 

@@ -19,8 +19,8 @@ repos:
   - repo: https://github.com/seddonym/import-linter
     rev: v2.1
     hooks:
-    - id: import-linter
-      stages: [manual]
+      - id: import-linter
+        stages: [manual]
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.31.1
     hooks:
