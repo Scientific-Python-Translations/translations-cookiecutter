@@ -83,7 +83,7 @@ Next steps:
 
 4. Update the `crowdin.yml` file contents. The template will create a default Crowind configuration file
    but the contents for the `files` setion will change from project to project so this needs to be updated
-   in order to have the correct integratuon. You can read more about the configuration file on the [Crowdin support docs](https://support.crowdin.com/developer/configuration-file/).
+   in order to have the correct integration. You can read more about the configuration file on the [Crowdin support docs](https://support.crowdin.com/developer/configuration-file/).
 
 ```yaml
 # https://support.crowdin.com/developer/configuration-file/
