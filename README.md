@@ -1,4 +1,4 @@
-# 🧩 translations-cookiecutter
+# translations-cookiecutter
 
 **A Cookiecutter template for creating translation repositories within the Scientific Python ecosystem.**
 
@@ -6,7 +6,7 @@ This template helps maintainers set up dedicated translation repositories that a
 
 ---
 
-## 📦 What is this?
+## What is this?
 
 The `translations-cookiecutter` provides a standardized structure for Scientific Python project translation repositories. It includes boilerplate files, GitHub Actions workflows, and configuration that allow projects to integrate multilingual content into their websites efficiently.
 
