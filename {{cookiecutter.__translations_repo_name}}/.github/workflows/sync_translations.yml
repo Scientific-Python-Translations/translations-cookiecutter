@@ -13,14 +13,18 @@ jobs:
           # Provided by user
           crowdin-project: "{{ cookiecutter.project_name }}"
           source-repo: "{{ cookiecutter.__source_repo }}"
-          source-folder: "{{ cookiecutter.__source_folder }}"
+          source-path: "{{ cookiecutter.source_path }}"
           source-ref: "{{ cookiecutter.source_ref }}"
           translations-repo: "{{ cookiecutter.translations_repo }}"
-          translations-folder: "{{ cookiecutter.translations_folder }}"
+          translations-path: "{{ cookiecutter.translations_path }}"
+          translations-source-path: "{{ cookiecutter.translations_source_path }}"
           translations-ref: "{{ cookiecutter.translations_ref }}"
           translation-percentage: "{{ cookiecutter.translation_percentage }}"
           approval-percentage: "{{ cookiecutter.approval_percentage }}"
           use-precommit: "{{ cookiecutter.use_precommit }}"
+          create-toml-file: "{{ cookiecutter.create_toml_file }}"
+          create-upstream-pr: "{{ cookiecutter.create_upstream_pr }}"
+          auto-merge: "{{ cookiecutter.auto_merge }}"
           # Provided by organization secrets
           gpg-private-key: {% raw %}${{ secrets.GPG_PRIVATE_KEY }}{% endraw %}
           passphrase: {% raw %}${{ secrets.PASSPHRASE }}{% endraw %}

@@ -11,10 +11,11 @@ jobs:
         uses: Scientific-Python-Translations/content-sync@main
         with:
           source-repo: "{{ cookiecutter.__source_repo }}"
-          source-folder: "{{ cookiecutter.__source_folder }}"
+          source-path: "{{ cookiecutter.source_path }}"
           source-ref: "{{ cookiecutter.source_ref }}"
           translations-repo: "{{ cookiecutter.translations_repo }}"
-          translations-folder: "{{ cookiecutter.translations_folder }}"
+          translations-path: "{{ cookiecutter.translations_path }}"
+          translations-source-path: "{{ cookiecutter.translations_source_path }}"
           translations-ref: "{{ cookiecutter.translations_ref }}"
           # These are provided by the Scientific Python Project and allow
           # automation with bots
