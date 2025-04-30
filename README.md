@@ -38,20 +38,33 @@ cookiecutter gh:Scientific-Python-Translations/translations-cookiecutter
 You’ll see prompts like this:
 
 ```bash
-  [1/11] project_name (): NumPy.Org
-  [2/11] source_org (): numpy
-  [3/11] source_repo_name (): numpy.org
-  [4/11] base_source_folder (content):
-  [5/11] source_ref (main):
-  [6/11] translations_repo (Scientific-Python-Translations/numpy.org-translations):
-  [7/11] translations_folder (numpy.org-translations/content/en/):
-  [8/11] translations_ref (main):
-  [9/11] translation_percentage (90):
-  [10/11] approval_percentage (0):
-  [11/11] Select use_precommit
+  [1/15] project_name (): NumPy.Org
+  [2/15] source_org (): numpy
+  [3/15] source_repo_name (): numpy.org
+  [4/15] source_path (content/en/):
+  [5/15] source_ref (main):
+  [6/15] translations_repo (Scientific-Python-Translations/numpy.org-translations):
+  [7/15] translations_path (content/):
+  [8/15] translations_source_path (content/en/):
+  [9/15] translations_ref (main):
+  [10/15] translation_percentage (90):
+  [11/15] approval_percentage (0):
+  [12/15] Select use_precommit
     1 - false
     2 - true
-    Choose from [1/2] (1): 2
+    Choose from [1/2] (1):
+  [13/15] Select create_toml_file
+    1 - false
+    2 - true
+    Choose from [1/2] (1):
+  [14/15] Select create_upstream_pr
+    1 - false
+    2 - true
+    Choose from [1/2] (1):
+  [15/15] Select auto_merge
+    1 - false
+    2 - true
+    Choose from [1/2] (1):
 ```
 
 Notice that the project name must match the Crowdin project name. As the prompt keeps asking for
