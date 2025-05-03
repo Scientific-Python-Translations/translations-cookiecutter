@@ -10,7 +10,6 @@ jobs:
       - name: Sync {{ cookiecutter.project_name }} translations
         uses: Scientific-Python-Translations/translations-sync@main
         with:
-          # Provided by user
           crowdin-project: "{{ cookiecutter.project_name }}"
           source-repo: "{{ cookiecutter.__source_repo }}"
           source-path: "{{ cookiecutter.source_path }}"
@@ -25,7 +24,8 @@ jobs:
           create-toml-file: "{{ cookiecutter.create_toml_file }}"
           create-upstream-pr: "{{ cookiecutter.create_upstream_pr }}"
           auto-merge: "{{ cookiecutter.auto_merge }}"
-          # Provided by organization secrets
+          # These are provided by the Scientific Python Project and allow
+          # automation with bots
           gpg-private-key: {% raw %}${{ secrets.GPG_PRIVATE_KEY }}{% endraw %}
           passphrase: {% raw %}${{ secrets.PASSPHRASE }}{% endraw %}
           token: {% raw %}${{ secrets.TOKEN }}{% endraw %}

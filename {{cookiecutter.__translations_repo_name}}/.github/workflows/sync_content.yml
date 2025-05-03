@@ -17,6 +17,7 @@ jobs:
           translations-path: "{{ cookiecutter.translations_path }}"
           translations-source-path: "{{ cookiecutter.translations_source_path }}"
           translations-ref: "{{ cookiecutter.translations_ref }}"
+          auto-merge: "{{ cookiecutter.auto_merge }}"
           # These are provided by the Scientific Python Project and allow
           # automation with bots
           gpg-private-key: {% raw %}${{ secrets.GPG_PRIVATE_KEY }}{% endraw %}
