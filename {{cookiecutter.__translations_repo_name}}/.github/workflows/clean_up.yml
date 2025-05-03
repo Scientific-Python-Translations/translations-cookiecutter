@@ -1,0 +1,19 @@
+name: Clean up
+on:
+  schedule:
+    - cron: '0 0 * * FRI'  # Every Friday at midnight
+  workflow_dispatch:
+jobs:
+  sync_translations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean up {{ cookiecutter.project_name }}
+        uses: Scientific-Python-Translations/translations-sync@main
+        with:
+          translations-repo: "{{ cookiecutter.translations_repo }}"
+          translations-ref: "{{ cookiecutter.translations_ref }}"
+          # These are provided by the Scientific Python Project and allow
+          # automation with bots
+          gpg-private-key: {% raw %}${{ secrets.GPG_PRIVATE_KEY }}{% endraw %}
+          passphrase: {% raw %}${{ secrets.PASSPHRASE }}{% endraw %}
+          token: {% raw %}${{ secrets.TOKEN }}{% endraw %}

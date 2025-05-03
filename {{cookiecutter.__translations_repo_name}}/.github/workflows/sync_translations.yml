@@ -1,10 +1,10 @@
 name: Sync Translations
 on:
   schedule:
-    - cron: '0 12 * * MON'  # Every Monday at noon
+    - cron: '0 0 * * WED'  # Every Wednesday at midnight
   workflow_dispatch:
 jobs:
-  build:
+  sync_translations:
     runs-on: ubuntu-latest
     steps:
       - name: Sync {{ cookiecutter.project_name }} translations
