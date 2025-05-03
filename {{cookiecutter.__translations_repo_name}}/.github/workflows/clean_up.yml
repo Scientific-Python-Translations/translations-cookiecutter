@@ -7,7 +7,7 @@ jobs:
   sync_translations:
     runs-on: ubuntu-latest
     steps:
-      - name: Clean up {{ cookiecutter.project_name }}
+      - name: Clean {{ cookiecutter.project_name }} translation repository
         uses: Scientific-Python-Translations/clean-up@main
         with:
           translations-repo: "{{ cookiecutter.translations_repo }}"
